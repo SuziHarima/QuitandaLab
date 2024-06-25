@@ -1,23 +1,23 @@
-// let numerosArray = [2, 5, 8, 14, 9];
+let numerosArray = [2, 5, 8, 14, 9];
 
-// let somaArray = numerosArray.reduce((total, num) => total + num, 0);
+let somaArray = numerosArray.reduce((total, num) => total + num, 0);
 
-// console.log(somaArray);
-
-
-
-// let paresArray = numerosArray.filter( n => {
-//     return n % 2 == 0
-// });
-
-// console.log(paresArray);
+console.log(somaArray);
 
 
-// let arrayQuadrado = numerosArray.map( n => {
-//     return n ** 2
-// });
 
-// console.log(arrayQuadrado);
+let paresArray = numerosArray.filter( n => {
+    return n % 2 == 0
+});
+
+console.log(paresArray);
+
+
+let arrayQuadrado = numerosArray.map( n => {
+    return n ** 2
+});
+
+console.log(arrayQuadrado);
 
 //CLASSE PRODUTO
 
@@ -40,23 +40,25 @@ class Produto {
         this.quantidade -= quantidadeVendida;
     }
 
+    repor(quantidadeReposta){
+        this.quantidade += quantidadeReposta;
+    }
+
 }
 
 let produto1 = new Produto("manteiga", 3, 5);
-console.log(produto1.quantidade)
+console.log("Quantidade inicial: " + produto1.quantidade);
 
 produto1.vender(3);
 
-console.log(produto1.quantidade)
+console.log("Depois de vender: " + produto1.quantidade);
+
+produto1.repor(8);
+
+console.log("Depois de repor: " + produto1.quantidade);
 
 
 
+// Crie um método chamado Repor() dentro da classe Produto.
 
-// Crie um método para a classe Produto chamado de Vender().
-
-// Este método deve receber como parâmetro a quantidade vendida e deve reduzir (deduzir) da quantidade do produto. 
-// Porém, para ser possível essa venda a quantidade vendida não pode ser maior que a quantidade disponível.
-
-// Caso não haja quantidade suficiente, exiba uma mensagem de “Estoque insuficiente”.
-
-
+// Este método deve receber como parâmetro a quantidade reposta e adicionar o montante à quantidade do produto.
